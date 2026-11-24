@@ -45,6 +45,6 @@ export const rules: Rule[] = [
 
 export const missedByF = { missed: 195, at10M: 145 }
 
-// Filled from dashboard_data.json (Colab cell 10). Empty arrays render a "data coming" note.
-export const byHour: { hour: number; n: number; fraud: number }[] = []
-export const byAmount: { band: string; n: number; fraud: number }[] = []
+// From dashboard_data.json (Colab cell 10), transfers and cash-outs only.
+export const byHour: { hour: number; n: number; fraud: number }[] = [{"hour": 0, "n": 18214, "fraud": 300}, {"hour": 1, "n": 6005, "fraud": 358}, {"hour": 2, "n": 1922, "fraud": 372}, {"hour": 3, "n": 780, "fraud": 326}, {"hour": 4, "n": 512, "fraud": 274}, {"hour": 5, "n": 632, "fraud": 366}, {"hour": 6, "n": 904, "fraud": 358}, {"hour": 7, "n": 2542, "fraud": 328}, {"hour": 8, "n": 10302, "fraud": 368}, {"hour": 9, "n": 120028, "fraud": 341}, {"hour": 10, "n": 187024, "fraud": 375}, {"hour": 11, "n": 198240, "fraud": 324}, {"hour": 12, "n": 218561, "fraud": 339}, {"hour": 13, "n": 213906, "fraud": 346}, {"hour": 14, "n": 199362, "fraud": 353}, {"hour": 15, "n": 188136, "fraud": 341}, {"hour": 16, "n": 200906, "fraud": 345}, {"hour": 17, "n": 202806, "fraud": 353}, {"hour": 18, "n": 270681, "fraud": 343}, {"hour": 19, "n": 299933, "fraud": 342}, {"hour": 20, "n": 238889, "fraud": 340}, {"hour": 21, "n": 90926, "fraud": 347}, {"hour": 22, "n": 61164, "fraud": 351}, {"hour": 23, "n": 38034, "fraud": 323}]
+export const byAmount: { band: string; n: number; fraud: number }[] = [{"band": "1. <10k", "n": 78841, "fraud": 278}, {"band": "2. 10k-100k", "n": 757271, "fraud": 1429}, {"band": "3. 100k-1M", "n": 1803790, "fraud": 3800}, {"band": "4. 1M-10M", "n": 124857, "fraud": 2419}, {"band": "5. 10M", "n": 5650, "fraud": 287}]

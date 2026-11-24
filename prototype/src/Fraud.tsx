@@ -96,7 +96,7 @@ function SignalChart() {
 }
 
 /* 3/4. Fraud rate by hour / amount band: single-series columns */
-function RateColumns({ data, label }: { data: { key: string; n: number; fraud: number }[]; label: string }) {
+function RateColumns({ data, label, labelAll = false }: { data: { key: string; n: number; fraud: number }[]; label: string; labelAll?: boolean }) {
   const { tip, show, hide } = useTip()
   if (!data.length) return <div className="pending">Data coming from the Colab export.</div>
   const rates = data.map((d) => (100 * d.fraud) / d.n)
@@ -111,7 +111,8 @@ function RateColumns({ data, label }: { data: { key: string; n: number; fraud: n
             onMouseMove={(e) => show(e, [`${label} ${d.key}`, `${fmt(d.fraud)} frauds of ${fmt(d.n)}`, `Fraud rate: ${rates[i].toFixed(2)}%`])}
             onMouseLeave={hide}
           >
-            <div className="colbar s-fraud" style={{ height: `${(100 * rates[i]) / max}%` }} />
+            {(labelAll || rates[i] === max) && <span className="colval">{rates[i] < 1 ? rates[i].toFixed(2) : rates[i].toFixed(1)}%</span>}
+            <div className="colbar s-fraud" style={{ height: `${(100 * rates[i]) / max * 0.88}%` }} />
             <span className="collabel">{d.key}</span>
           </div>
         ))}
@@ -212,12 +213,14 @@ export default function Fraud() {
         <section className="fx-step">
           <div className="fx-step-text">
             <span className="num">3</span>
-            <h2>When and how big</h2>
-            <p>Fraud rate by hour of day and by amount, for transfers and cash-outs. These shape where a step-up check is worth the friction.</p>
+            <h2>Fraudsters don't sleep. Customers do.</h2>
+            <p>Fraud happens at a steady ~340 cases an hour, day and night. Genuine customers mostly transact between 9 AM and 9 PM. So between midnight and 6 AM, <b>about 1 in 14 transfers and cash-outs is fraud</b>, and between 3 and 6 AM about half are, against roughly 1 in 600 in the afternoon.</p>
+            <p>Bigger amounts are riskier too: transactions of 1M–10M are fraud 1.9% of the time, and exactly 10M (the cap) 5.1%, against about 0.2% below 1M.</p>
+            <p className="small">So a night-time or high-amount step-up check (a fingerprint) costs few genuine customers. But night alone isn't a rule: only a quarter of all fraud happens at night (rule H).</p>
           </div>
           <div className="panel two">
-            <div><div className="panel-title">Fraud rate by hour of day</div><RateColumns data={byHour.map((d) => ({ key: String(d.hour), n: d.n, fraud: d.fraud }))} label="Hour" /></div>
-            <div><div className="panel-title">Fraud rate by amount</div><RateColumns data={byAmount.map((d) => ({ key: d.band.replace(/^\d\. /, ''), n: d.n, fraud: d.fraud }))} label="Amount" /></div>
+            <div><div className="panel-title">Share of transfers and cash-outs that are fraud, by hour</div><RateColumns data={byHour.map((d) => ({ key: String(d.hour), n: d.n, fraud: d.fraud }))} label="Hour" /></div>
+            <div><div className="panel-title">Fraud rate by amount</div><RateColumns data={byAmount.map((d) => ({ key: d.band.replace(/^\d\. /, ''), n: d.n, fraud: d.fraud }))} label="Amount" labelAll /></div>
           </div>
         </section>
 

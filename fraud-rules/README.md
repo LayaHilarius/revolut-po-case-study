@@ -34,7 +34,9 @@ Everyday payments never need to be checked. Fraud is rare (0.13% overall), so a 
 | H. F, midnight–6 AM only | 23.9% | 21.9% | 0 | 0 |
 | **I. F OR exactly 10M (max single transaction)** | **99.4%** | **99.8%** | **2,920** | **4.6** |
 
-**4. Why F misses some fraud:** of the 195 frauds F misses, 145 are exactly 10,000,000, the simulator's per-transaction cap. Fraudsters drain rich accounts in 10M chunks, so a chunk never equals the full balance.
+**4. Fraudsters don't sleep.** Fraud runs at a steady ~340 cases an hour, but genuine customers transact mostly 9 AM–9 PM. Between midnight and 6 AM about 1 in 14 transfers and cash-outs is fraud (about half between 3 and 6 AM), against about 1 in 600 in the afternoon. Big amounts are riskier too: 1.9% fraud for 1M–10M and 5.1% at exactly 10M, against ~0.2% below 1M. Data: [`data/dashboard_data.json`](data/dashboard_data.json).
+
+**5. Why F misses some fraud:** of the 195 frauds F misses, 145 are exactly 10,000,000, the simulator's per-transaction cap. Fraudsters drain rich accounts in 10M chunks, so a chunk never equals the full balance.
 
 ## Recommendation
 - **Block** on rule F (exact full-balance transfer or cash-out): it stops 87.7% of fraud money and, in this data, blocks no genuine customers.

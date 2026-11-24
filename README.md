@@ -11,7 +11,7 @@
 | 2. Analysis | 9 complaint themes tagged with keyword rules (pandas), counted with SQL (DuckDB) | [`docs/01-data-findings.md`](docs/01-data-findings.md) |
 | 3. Research | Problem statement and how Monzo, Wise and Revolut handle a locked account | [`docs/02-problem-and-research.md`](docs/02-problem-and-research.md) |
 | 4. PRD | Account Review Tracker: requirements, metrics, roadmap, risks | [`docs/03-prd-account-review-tracker.md`](docs/03-prd-account-review-tracker.md) |
-| 5. Prototype | Clickable React prototype | _coming soon_ |
+| 5. Prototype | Clickable React prototype: home alert, review tracker, document upload, essentials request | [`prototype/`](prototype/) · live: https://layahilarius.github.io/revolut-po-case-study/ |
 | 6. User testing | 5 users, 2 tasks | _coming soon_ |
 
 ## Key numbers

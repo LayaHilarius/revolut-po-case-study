@@ -24,7 +24,7 @@
 | Verification | 13.0% | 1.83 |
 
 ## Project 2: fraud rules vs. good customers (SQL)
-Using SQL on 6.3M simulated mobile-money transactions (PaySim), I compared 9 fraud rules. The app's existing rule saved 0.6% of fraud money; a rule that flags transfers moving **exactly the full balance** saved 87.7% with no genuine customers blocked, and adding a "10M chunk" step-up check raised that to 99.8% while flagging 4.6 genuine transactions per 10,000. Details: [`fraud-rules/`](fraud-rules/README.md).
+Using SQL on 6.3M simulated mobile-money transactions (PaySim), I compared 9 fraud rules. The app's existing rule saved 0.6% of fraud money; a rule that flags transfers moving **exactly the full balance** saved 87.7% with no genuine customers blocked, and adding a "10M chunk" step-up check raised that to 99.8% while flagging 4.6 genuine transactions per 10,000. Details: [`fraud-rules/`](fraud-rules/README.md). Interactive dashboard: https://layahilarius.github.io/revolut-po-case-study/#/fraud
 
 ## Notes
 - The `country` column comes from the scraper setting and is not meaningful: the India and UK requests returned the same reviews, which were de-duplicated.

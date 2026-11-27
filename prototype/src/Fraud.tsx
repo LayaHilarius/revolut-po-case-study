@@ -172,7 +172,7 @@ export default function Fraud() {
     <div className="viz-root">
       <div className="page">
         <nav className="crumbs">
-          <a href="#/">← Account Review Tracker prototype</a>
+          <a href="#/">← Case study overview</a>
           <a href="https://github.com/LayaHilarius/revolut-po-case-study/tree/main/fraud-rules">SQL and write-up ↗</a>
         </nav>
         <header>
@@ -181,7 +181,7 @@ export default function Fraud() {
           <p className="intro">
             Every payment app blocks suspicious transactions. Block too little and money is stolen; block too much and genuine
             customers are locked out of their own money, which is the top reason for 1–2 star Revolut reviews in my{' '}
-            <a href="#/">first project</a>. I used SQL on 6.3M simulated mobile-money transactions to find a rule that does both jobs.
+            <a href="#/tracker">first project</a>. I used SQL on 6.3M simulated mobile-money transactions to find a rule that does both jobs.
           </p>
         </header>
 
@@ -258,7 +258,7 @@ export default function Fraud() {
           <div className="panel reco">
             <div className="reco-row"><span className="tag block">Block</span><p><b>Rule F</b>: a transfer or cash-out that moves exactly the full balance. Stops 87.7% of fraud money and, in this data, blocks no genuine customers.</p></div>
             <div className="reco-row"><span className="tag stepup">Step up</span><p><b>The 10M-chunk signal</b> from rule I: ask for a fingerprint or in-app confirmation instead of freezing the account. Total fraud money stopped rises to 99.8%, and the 2,920 genuine customers it catches (4.6 per 10,000) get a 10-second check, not a lock-out.</p></div>
-            <div className="reco-row"><span className="tag track">Explain</span><p>Anyone who is blocked sees the <a href="#/">Account Review Tracker</a>: what's happening, what we need, and how long it takes.</p></div>
+            <div className="reco-row"><span className="tag track">Explain</span><p>Anyone who is blocked sees the <a href="#/tracker">Account Review Tracker</a>: what's happening, what we need, and how long it takes.</p></div>
           </div>
         </section>
 

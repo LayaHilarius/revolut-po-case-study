@@ -1,5 +1,7 @@
 # Revolut product case study: customers locked out of their money
 
+**Live case study overview:** https://layahilarius.github.io/revolut-po-case-study/ (animated map of the whole project, with links to the prototype and the fraud dashboard)
+
 **Question:** what makes Revolut customers angriest, and what product change would help most?
 
 **Answer in one line:** 53.3% of 1–2 star Play Store reviews come from customers locked out of their money (can't log in, account frozen, stuck in verification), and Revolut, unlike Monzo and Wise, gives them no timeline or progress view. I propose an in-app **Account Review Tracker**.
@@ -11,7 +13,7 @@
 | 2. Analysis | 9 complaint themes tagged with keyword rules (pandas), counted with SQL (DuckDB) | [`docs/01-data-findings.md`](docs/01-data-findings.md) |
 | 3. Research | Problem statement and how Monzo, Wise and Revolut handle a locked account | [`docs/02-problem-and-research.md`](docs/02-problem-and-research.md) |
 | 4. PRD | Account Review Tracker: requirements, metrics, roadmap, risks | [`docs/03-prd-account-review-tracker.md`](docs/03-prd-account-review-tracker.md) |
-| 5. Prototype | Clickable React prototype: home alert, review tracker, document upload, essentials request | [`prototype/`](prototype/) · live: https://layahilarius.github.io/revolut-po-case-study/ |
+| 5. Prototype | Clickable React prototype: home alert, review tracker, document upload, essentials request | [`prototype/`](prototype/) · live: https://layahilarius.github.io/revolut-po-case-study/#/tracker |
 | 6. User testing | 5 users, 2 tasks | _coming soon_ |
 
 ## Key numbers

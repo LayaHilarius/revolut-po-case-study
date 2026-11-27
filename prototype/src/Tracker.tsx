@@ -74,7 +74,7 @@ export default function Tracker() {
         <p>When an account is under review, customers don't know why, what to do, or how long it will take. 53.3% of 1–2 star Play Store reviews are customers locked out of their money.</p>
         <p>This prototype shows the stage, what's needed, an expected time, and what still works, so customers don't have to chase support.</p>
         <p className="muted">Try: find what you need to upload, then find when you'll get full access back.</p>
-        <a href="https://github.com/LayaHilarius/revolut-po-case-study">Case study and PRD →</a>
+        <p><a href="#/">← Case study overview</a> · <a href="#/fraud">Fraud dashboard →</a></p>
       </aside>
 
       <div className="phone">
